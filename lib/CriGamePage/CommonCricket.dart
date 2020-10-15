@@ -202,7 +202,7 @@ class _CommonCricketState extends State<CommonCricket> {
                                 height: height * 0.05,
                               ),
                               Container(
-                                height: height,
+                                height: height * 0.57,
                                 child: DefaultTabController(
                                   length: 4,
                                   child: Scaffold(

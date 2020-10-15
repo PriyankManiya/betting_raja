@@ -8,27 +8,32 @@ class Wk extends StatefulWidget {
 }
 
 class _WkState extends State<Wk> {
-  List<String> credits = ["10", "10", "9.5"];
-  List<String> points = ["277", "260", "255"];
-  List<String> playername = ["MS Dhoni", "Rohit Sharma", "Shane Watson"];
-  List<String> teams = ["CSK", "MI", "CSK"];
-  List<String> players = ["dhoni.png", "watson.png", "rohit.png"];
-
+  List<String> credits = ["10", "10", "9.5","10", "10", "9.5"];
+  List<String> points = ["277", "260", "255","277", "260", "255"];
+  List<String> playername = ["MS Dhoni", "Rohit Sharma", "Shane Watson","MS Dhoni", "Rohit Sharma", "Shane Watson"];
+  List<String> teams = ["CSK", "MI", "CSK","CSK", "MI", "CSK"];
+  List<String> players = ["dhoni.png","rohit.png", "watson.png", "dhoni.png","rohit.png", "watson.png"];
+var height;
   @override
   Widget build(BuildContext context) {
+    height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
+        height: height*0.55,
         child: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  "Pick 1-4 Wicket Keeper",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 17),
+                Padding(
+                  padding: const EdgeInsets.only(left: 15),
+                  child: Text(
+                    "Pick 1-4 Wicket Keeper",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 17),
+                  ),
                 ),
                 IconButton(
                     icon: FaIcon(
@@ -97,87 +102,89 @@ class _WkState extends State<Wk> {
                 ]),
               ],
             ),
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: playername.length,
-              itemBuilder: (context, index) {
-                return Table(defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-                  border: TableBorder(
-                    top: BorderSide(color: Colors.grey, width: 1),
-                  ),
-                  columnWidths: {
-                    0: FixedColumnWidth(60),
-                    1: FixedColumnWidth(130),
-                    // 2: FixedColumnWidth(70),
-                    // 3: FixedColumnWidth(70),
-                    4: FixedColumnWidth(40),
-                  },
-                  children: [
-
-                    TableRow(children: [
-                      Image.asset(
-                        "assets/players/CSK/${players[index]}",
-                        height: 70,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  playername[index],
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 14),
-                                ),
-                                Text(
-                                  teams[index],
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 9),
-                                ),
-                              ],
-                            ),
-                          ],
+            Container(
+              height: height*0.37,
+              child: ListView.builder(
+                itemCount: playername.length,
+                itemBuilder: (context, index) {
+                  return Table(
+                    defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                    border: TableBorder(
+                      top: BorderSide(color: Colors.grey, width: 1),
+                    ),
+                    columnWidths: {
+                      0: FixedColumnWidth(60),
+                      1: FixedColumnWidth(130),
+                      // 2: FixedColumnWidth(70),
+                      // 3: FixedColumnWidth(70),
+                      4: FixedColumnWidth(40),
+                    },
+                    children: [
+                      TableRow(children: [
+                        Image.asset(
+                          "assets/players/CSK/${players[index]}",
+                          height: 70,
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: Text(
-                          points[index],
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.grey,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 13),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    playername[index],
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 14),
+                                  ),
+                                  Text(
+                                    teams[index],
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Colors.grey,
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 9),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: Text(
-                          credits[index],
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 13),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: Text(
+                            points[index],
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 13),
+                          ),
                         ),
-                      ),
-                      IconButton(
-                          icon: Icon(CupertinoIcons.add_circled),
-                          onPressed: () {})
-                    ]),
-                  ],
-                );
-              },
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: Text(
+                            credits[index],
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 13),
+                          ),
+                        ),
+                        IconButton(
+                            icon: Icon(CupertinoIcons.add_circled),
+                            onPressed: () {})
+                      ]),
+                    ],
+                  );
+                },
+              ),
             )
           ],
         ),

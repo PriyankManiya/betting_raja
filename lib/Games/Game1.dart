@@ -9,15 +9,15 @@ class Game1 extends StatefulWidget {
 class _Game1State extends State<Game1> {
   List<String> teamsL = [
     "csk.png",
-    "csk.png",
-    "csk.png",
-    "csk.png",
+    "DC.png",
+    "kkr.png",
+    "panjab.png",
   ];
   List<String> teamsR = [
-    "csk.png",
-    "csk.png",
-    "csk.png",
-    "csk.png",
+    "mumbai.png",
+    "Rajsthan.png",
+    "rcb.png",
+    "srk.png",
   ];
   List<String> time = [
     "3h 9m 03s",
