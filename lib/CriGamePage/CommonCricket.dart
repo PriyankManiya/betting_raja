@@ -2,6 +2,7 @@ import 'package:betting_raja/CriGamePage/selectPlayer/WK.dart';
 import 'package:betting_raja/Screens/bottomNav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // ignore: must_be_immutable
 class CommonCricket extends StatefulWidget {
@@ -16,10 +17,39 @@ class CommonCricket extends StatefulWidget {
 
 class _CommonCricketState extends State<CommonCricket> {
   var height;
+
   @override
   Widget build(BuildContext context) {
     height = MediaQuery.of(context).size.height;
     return Scaffold(
+        bottomNavigationBar: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: SizedBox(
+              height: 50,
+              child: RaisedButton(
+                onPressed: () {},
+                child: Text(
+                  "SAVE TEAM",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                color: Color(0xffFB1818),
+              ),
+            ),
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          backgroundColor: Color(0xffFB1818),
+          child: FaIcon(
+            FontAwesomeIcons.eye,
+            color: Colors.white,
+            size: 35,
+          ),
+        ),
         appBar: AppBar(
           actions: [
             IconButton(

@@ -101,7 +101,7 @@ class _WkState extends State<Wk> {
               shrinkWrap: true,
               itemCount: playername.length,
               itemBuilder: (context, index) {
-                return Table(
+                return Table(defaultVerticalAlignment: TableCellVerticalAlignment.middle,
                   border: TableBorder(
                     top: BorderSide(color: Colors.grey, width: 1),
                   ),
@@ -113,6 +113,7 @@ class _WkState extends State<Wk> {
                     4: FixedColumnWidth(40),
                   },
                   children: [
+
                     TableRow(children: [
                       Image.asset(
                         "assets/players/CSK/${players[index]}",
