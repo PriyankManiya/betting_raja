@@ -105,9 +105,12 @@ class _Game1State extends State<Game1> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Image.asset(
-                                            "assets/teams/${teamsL[index]}",
-                                            height: 100,
+                                          Padding(
+                                            padding: const EdgeInsets.only(left: 5),
+                                            child: Image.asset(
+                                              "assets/teams/${teamsL[index]}",
+                                              height: 100,
+                                            ),
                                           ),
                                           Text(
                                             "VS",
@@ -115,9 +118,12 @@ class _Game1State extends State<Game1> {
                                                 fontSize: 25,
                                                 fontWeight: FontWeight.w500),
                                           ),
-                                          Image.asset(
-                                            "assets/teams/${teamsR[index]}",
-                                            height: 100,
+                                          Padding(
+                                            padding: const EdgeInsets.only(right: 5),
+                                            child: Image.asset(
+                                              "assets/teams/${teamsR[index]}",
+                                              height: 100,
+                                            ),
                                           )
                                         ],
                                       ),

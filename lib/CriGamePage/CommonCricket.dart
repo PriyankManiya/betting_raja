@@ -17,10 +17,12 @@ class CommonCricket extends StatefulWidget {
 
 class _CommonCricketState extends State<CommonCricket> {
   var height;
+  var width;
 
   @override
   Widget build(BuildContext context) {
     height = MediaQuery.of(context).size.height;
+    width = MediaQuery.of(context).size.width;
     return Scaffold(
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
@@ -50,6 +52,7 @@ class _CommonCricketState extends State<CommonCricket> {
             size: 35,
           ),
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
         appBar: AppBar(
           actions: [
             IconButton(
@@ -93,190 +96,201 @@ class _CommonCricketState extends State<CommonCricket> {
             ),
           ),
           body: SingleChildScrollView(
-            child: Container(
-                color: Color(0xffececec),
-                child: Column(
-                  children: [
-                    SizedBox(height: 10),
-                    Text("Maximum 7 player from each team",
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.w400)),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(15),
-                        child: Container(
-                          color: Color(0xffececec),
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 10, horizontal: 7),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    Column(
+            child: Stack(
+              children: [
+                Container(
+                    color: Color(0xffececec),
+                    child: Column(
+                      children: [
+                        SizedBox(height: 10),
+                        Text("Maximum 7 player from each team",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.w400)),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(15),
+                            child: Container(
+                              color: Color(0xffececec),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 10, horizontal: 7),
+                                    child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceAround,
                                       children: [
-                                        Text(
-                                          "Players",
-                                          style: TextStyle(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w400),
-                                          textAlign: TextAlign.center,
-                                        ),
-                                        Text(
-                                          "11/11",
-                                          style: TextStyle(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.bold),
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ],
-                                    ),
-                                    Image.asset(widget.teaml),
-                                    Column(
-                                      children: [
-                                        Text(
-                                          "CSK",
-                                          style: TextStyle(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w400),
-                                          textAlign: TextAlign.center,
-                                        ),
-                                        Text(
-                                          "6",
-                                          style: TextStyle(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.bold),
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      width: 20,
-                                    ),
-                                    Column(
-                                      children: [
-                                        Text(
-                                          "MI",
-                                          style: TextStyle(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w400),
-                                          textAlign: TextAlign.center,
-                                        ),
-                                        Text(
-                                          "5",
-                                          style: TextStyle(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.bold),
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ],
-                                    ),
-                                    Image.asset(widget.teamr),
-                                    Column(
-                                      children: [
-                                        Text(
-                                          "Credit left",
-                                          style: TextStyle(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w400),
-                                          textAlign: TextAlign.center,
-                                        ),
-                                        Text(
-                                          "0",
-                                          style: TextStyle(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.bold),
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(
-                                height: height * 0.05,
-                              ),
-                              Container(
-                                height: height * 0.57,
-                                child: DefaultTabController(
-                                  length: 4,
-                                  child: Scaffold(
-                                    backgroundColor: Colors.white,
-                                    appBar: AppBar(
-                                      elevation: 0.0,
-                                      backgroundColor: Color(0xffececec),
-                                      title: TabBar(
-                                        indicator: BoxDecoration(
-                                            color: Colors.white,
-                                            borderRadius:
-                                                BorderRadius.circular(15)),
-                                        tabs: [
-                                          Tab(
-                                            child: Text(
-                                              "WK \n(0)",
-                                              textAlign: TextAlign.center,
+                                        Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            Text(
+                                              "Players",
                                               style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 17),
-                                            ),
-                                          ),
-                                          Tab(
-                                            child: Text(
-                                              "BAT \n(0)",
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w400),
                                               textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 16),
                                             ),
-                                          ),
-                                          Tab(
-                                            child: Text(
-                                              "AR \n(0)",
+                                            Text(
+                                              "11/11",
+                                              style: TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.bold),
                                               textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 17),
                                             ),
-                                          ),
-                                          Tab(
-                                            child: Text(
-                                              "BOWL (0)",
+                                          ],
+                                        ),
+                                        Image.asset(widget.teaml, height: 80),
+                                        Column(
+                                          children: [
+                                            Text(
+                                              "CSK",
+                                              style: TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w400),
                                               textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 17),
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    body: TabBarView(
-                                      children: [
-                                        Wk(),
-                                        Center(child: Text("2")),
-                                        Center(child: Text("3")),
-                                        Center(child: Text("4")),
+                                            Text(
+                                              "6",
+                                              style: TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.bold),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Column(
+                                          children: [
+                                            Text(
+                                              "MI",
+                                              style: TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w400),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                            Text(
+                                              "5",
+                                              style: TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.bold),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ],
+                                        ),
+                                        Image.asset(
+                                          widget.teamr,
+                                          height: 80,
+                                        ),
+                                        Column(
+                                          children: [
+                                            Text(
+                                              "Credit left",
+                                              style: TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w400),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                            Text(
+                                              "0",
+                                              style: TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.bold),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ],
+                                        ),
                                       ],
                                     ),
                                   ),
-                                ),
+                                  SizedBox(
+                                    height: height * 0.05,
+                                  ),
+                                  Container(
+                                    height: height * 0.57,
+                                    child: DefaultTabController(
+                                      length: 4,
+                                      child: Scaffold(
+                                        backgroundColor: Colors.white,
+                                        appBar: AppBar(
+                                          elevation: 0.0,
+                                          backgroundColor: Color(0xffececec),
+                                          title: TabBar(
+                                            indicator: BoxDecoration(
+                                                color: Colors.white,
+                                                borderRadius:
+                                                    BorderRadius.circular(15)),
+                                            tabs: [
+                                              Tab(
+                                                child: Text(
+                                                  "WK \n(0)",
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 17),
+                                                ),
+                                              ),
+                                              Tab(
+                                                child: Text(
+                                                  "BAT \n(0)",
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 16),
+                                                ),
+                                              ),
+                                              Tab(
+                                                child: Text(
+                                                  "AR \n(0)",
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 17),
+                                                ),
+                                              ),
+                                              Tab(
+                                                child: Text(
+                                                  "BOWL (0)",
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 17),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        body: TabBarView(
+                                          children: [
+                                            Wk(),
+                                            Center(child: Text("2")),
+                                            Center(child: Text("3")),
+                                            Center(child: Text("4")),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ],
+                            ),
                           ),
-                        ),
-                      ),
-                    )
-                  ],
-                )),
+                        )
+                      ],
+                    )),
+              ],
+            ),
           ),
         ));
   }
