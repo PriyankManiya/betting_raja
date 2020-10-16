@@ -58,7 +58,7 @@ flutter:
     - assets/tab/
     - assets/teams/
     - assets/players/CSK/
-    - assets/players/MI/
+    - assets/players/CSK vs MI/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

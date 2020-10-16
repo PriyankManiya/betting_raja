@@ -8,8 +8,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class CommonCricket extends StatefulWidget {
   String teaml;
   String teamr;
+  List<List<List<String>>> players;
 
-  CommonCricket({this.teaml, this.teamr});
+  CommonCricket({this.teaml, this.teamr, this.players});
 
   @override
   _CommonCricketState createState() => _CommonCricketState();
@@ -43,7 +44,7 @@ class _CommonCricketState extends State<CommonCricket> {
             ),
           ),
         ),
-        floatingActionButton: FloatingActionButton(
+/*        floatingActionButton: FloatingActionButton(
           onPressed: () {},
           backgroundColor: Color(0xffFB1818),
           child: FaIcon(
@@ -52,7 +53,7 @@ class _CommonCricketState extends State<CommonCricket> {
             size: 35,
           ),
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
+        floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,*/
         appBar: AppBar(
           actions: [
             IconButton(
@@ -116,7 +117,7 @@ class _CommonCricketState extends State<CommonCricket> {
                                 children: [
                                   Padding(
                                     padding: const EdgeInsets.symmetric(
-                                        vertical: 10, horizontal: 7),
+                                        vertical: 10, horizontal: 0),
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceAround,
@@ -273,7 +274,9 @@ class _CommonCricketState extends State<CommonCricket> {
                                         ),
                                         body: TabBarView(
                                           children: [
-                                            Wk(),
+                                            Wk(
+                                              players: widget.players,
+                                            ),
                                             Center(child: Text("2")),
                                             Center(child: Text("3")),
                                             Center(child: Text("4")),

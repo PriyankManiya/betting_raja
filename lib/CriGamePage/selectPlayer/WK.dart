@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Wk extends StatefulWidget {
+  List<List<List<String>>> players;
+  Wk({this.players});
   @override
   _WkState createState() => _WkState();
 }
@@ -12,7 +14,6 @@ class _WkState extends State<Wk> {
   List<String> points = ["277", "260", "255","277", "260", "255"];
   List<String> playername = ["MS Dhoni", "Rohit Sharma", "Shane Watson","MS Dhoni", "Rohit Sharma", "Shane Watson"];
   List<String> teams = ["CSK", "MI", "CSK","CSK", "MI", "CSK"];
-  List<String> players = ["dhoni.png","rohit.png", "watson.png", "dhoni.png","rohit.png", "watson.png"];
 var height;
   @override
   Widget build(BuildContext context) {
@@ -69,7 +70,7 @@ var height;
                         Text(
                           "WICKET KEEPER",
                           style: TextStyle(
-                              color: Colors.black,
+                              color: Colors.grey[600],
                               fontWeight: FontWeight.w700,
                               fontSize: 13),
                         ),
@@ -82,7 +83,7 @@ var height;
                       "POINTS",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          color: Colors.grey,
+                          color: Colors.grey[600],
                           fontWeight: FontWeight.w700,
                           fontSize: 13),
                     ),
@@ -93,7 +94,7 @@ var height;
                       "CREDITS",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          color: Colors.grey,
+                          color:Colors.grey[600],
                           fontWeight: FontWeight.w700,
                           fontSize: 13),
                     ),
@@ -105,7 +106,7 @@ var height;
             Container(
               height: height*0.37,
               child: ListView.builder(
-                itemCount: playername.length,
+                itemCount: widget.players[0][0].length,
                 itemBuilder: (context, index) {
                   return Table(
                     defaultVerticalAlignment: TableCellVerticalAlignment.middle,
@@ -122,7 +123,7 @@ var height;
                     children: [
                       TableRow(children: [
                         Image.asset(
-                          "assets/players/CSK/${players[index]}",
+                          "assets/players/CSK vs MI/${widget.players[0][0][index]}",
                           height: 70,
                         ),
                         Padding(
