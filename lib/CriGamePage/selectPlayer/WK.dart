@@ -20,7 +20,6 @@ var height;
     height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
-        height: height*0.55,
         child: Column(
           children: [
             Row(

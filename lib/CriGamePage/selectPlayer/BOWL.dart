@@ -88,7 +88,7 @@ class _BOWLState extends State<BOWL> {
     height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
-        height: height * 0.55,
+     //   height: height * 0.5,
         child: Column(
           children: [
             Row(
@@ -97,7 +97,7 @@ class _BOWLState extends State<BOWL> {
                 Padding(
                   padding: const EdgeInsets.only(left: 15),
                   child: Text(
-                    "Pick 1-4 Wicket Keeper",
+                    "Pick Bowler",
                     style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w500,
@@ -172,7 +172,7 @@ class _BOWLState extends State<BOWL> {
               ],
             ),
             Container(
-              height: height * 0.37,
+              height: height*0.35,
               child: ListView.builder(
                 itemCount: widget.players[0][3].length,
                 itemBuilder: (context, index) {

@@ -20,7 +20,7 @@ class _ARState extends State<AR> {
     height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
-        height: height*0.55,
+       // height: height*0.55,
         child: Column(
           children: [
             Row(
@@ -29,7 +29,7 @@ class _ARState extends State<AR> {
                 Padding(
                   padding: const EdgeInsets.only(left: 15),
                   child: Text(
-                    "Pick 1-4 Wicket Keeper",
+                    "Pick All Rounder",
                     style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w500,
@@ -104,7 +104,7 @@ class _ARState extends State<AR> {
               ],
             ),
             Container(
-              height: height*0.37,
+              height: height*0.35,
               child: ListView.builder(
                 itemCount: widget.players[0][2].length,
                 itemBuilder: (context, index) {
