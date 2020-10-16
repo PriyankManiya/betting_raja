@@ -25,6 +25,52 @@ class _Game1State extends State<Game1> {
     "2d 2h 05m ",
     "2d 9h 03m ",
   ];
+ List< List<String>> CSKMINNAME = [
+    [
+      "ATare",
+      "MDhoni",
+      "IKishan",
+      "QdeKock",
+      "NJagadeesan",
+    ],
+   [
+     "ARayudu",
+     "ASingh",
+     "FduPlessis",
+     "HPandya",
+     "KJadhav",
+     "MVijay",
+     "RGaikwad",
+     "SRutherford",
+     "STiwary",
+     "SWatson"
+   ],
+   [
+     "ARoy",
+     "DBravo",
+     "KPandya",
+     "KPollard",
+     "MSantner",
+     "RJadeja",
+     "SCurran"
+   ],
+   [
+     "DChahar",
+     "DDeshmukh",
+     "DKulkarni",
+     "ITahir",
+     "JBumrah",
+     "JHazlewood",
+     "JPattinson",
+     "JYadav",
+     "KAsif",
+     "KSharma",
+     "LNgidi",
+     "MKhan",
+     "MKumar",
+     "MMcClenaghan"
+   ]
+  ];
   List<List<List<String>>> CSKMI = [
     [
       [
@@ -124,7 +170,7 @@ class _Game1State extends State<Game1> {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) => CommonCricket(
-                                        players: CSKMI,
+                                        players: CSKMI,Names: CSKMINNAME,
                                         teaml: "assets/teams/${teamsL[index]}",
                                         teamr: "assets/teams/${teamsR[index]}",
                                       ),
@@ -133,8 +179,8 @@ class _Game1State extends State<Game1> {
                               },
                               child: Card(
                                 elevation: 5,
-                               // margin: const EdgeInsets.only(bottom: 10.0),
-                               /* decoration: BoxDecoration(
+                                // margin: const EdgeInsets.only(bottom: 10.0),
+                                /* decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(5),
                                   color: Colors.white,
                                   boxShadow: [

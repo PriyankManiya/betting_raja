@@ -4,7 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Wk extends StatefulWidget {
   List<List<List<String>>> players;
-  Wk({this.players});
+  List<List<String>> Names;
+  Wk({this.players,this.Names});
   @override
   _WkState createState() => _WkState();
 }
@@ -12,8 +13,7 @@ class Wk extends StatefulWidget {
 class _WkState extends State<Wk> {
   List<String> credits = ["10", "10", "9.5","10", "10", "9.5"];
   List<String> points = ["277", "260", "255","277", "260", "255"];
-  List<String> playername = ["MS Dhoni", "Rohit Sharma", "Shane Watson","MS Dhoni", "Rohit Sharma", "Shane Watson"];
-  List<String> teams = ["CSK", "MI", "CSK","CSK", "MI", "CSK"];
+  List<String> teams = ["MI", "CSK", "MI","MI", "CSK"];
 var height;
   @override
   Widget build(BuildContext context) {
@@ -137,7 +137,7 @@ var height;
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    playername[index],
+                                    widget.Names[0][index],
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.w700,

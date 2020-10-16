@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.light().copyWith(
           visualDensity: VisualDensity.adaptivePlatformDensity,
           primaryColor: Color(0xffFB1818),
-          colorScheme: ColorScheme.light(secondary: Color(0xffFB1818))
-          /* primarySwatch: Color(0xffFB1818),*/
+          colorScheme: ColorScheme.light(secondary: Color(0xffFB1818)),
+        accentColor: Color(0xffFB1818),
           ),
       home: SplashScreen(),
     );

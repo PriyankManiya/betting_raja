@@ -1,3 +1,6 @@
+import 'package:betting_raja/CriGamePage/selectPlayer/AR.dart';
+import 'package:betting_raja/CriGamePage/selectPlayer/BAT.dart';
+import 'package:betting_raja/CriGamePage/selectPlayer/BOWL.dart';
 import 'package:betting_raja/CriGamePage/selectPlayer/WK.dart';
 import 'package:betting_raja/Screens/bottomNav.dart';
 import 'package:flutter/material.dart';
@@ -9,8 +12,9 @@ class CommonCricket extends StatefulWidget {
   String teaml;
   String teamr;
   List<List<List<String>>> players;
+  List<List<String>> Names;
 
-  CommonCricket({this.teaml, this.teamr, this.players});
+  CommonCricket({this.teaml, this.teamr, this.players,this.Names});
 
   @override
   _CommonCricketState createState() => _CommonCricketState();
@@ -276,10 +280,20 @@ class _CommonCricketState extends State<CommonCricket> {
                                           children: [
                                             Wk(
                                               players: widget.players,
+                                              Names: widget.Names,
                                             ),
-                                            Center(child: Text("2")),
-                                            Center(child: Text("3")),
-                                            Center(child: Text("4")),
+                                            BAT(
+                                              players: widget.players,
+                                              Names: widget.Names,
+                                            ),
+                                            AR(
+                                              players: widget.players,
+                                              Names: widget.Names,
+                                            ),
+                                            BOWL(
+                                              players: widget.players,
+                                              Names: widget.Names,
+                                            ),
                                           ],
                                         ),
                                       ),
