@@ -104,12 +104,7 @@ class _BOWLState extends State<BOWL> {
                         fontSize: 17),
                   ),
                 ),
-                IconButton(
-                    icon: FaIcon(
-                      FontAwesomeIcons.car,
-                      color: Colors.black,
-                    ),
-                    onPressed: () {})
+
               ],
             ),
             SizedBox(

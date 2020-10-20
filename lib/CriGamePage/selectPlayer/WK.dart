@@ -35,12 +35,6 @@ var height;
                         fontSize: 17),
                   ),
                 ),
-                IconButton(
-                    icon: FaIcon(
-                      FontAwesomeIcons.car,
-                      color: Colors.black,
-                    ),
-                    onPressed: () {})
               ],
             ),
             SizedBox(

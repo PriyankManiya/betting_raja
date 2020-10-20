@@ -37,6 +37,10 @@ class _DashboardState extends State<Dashboard> {
                     bottom: TabBar(
                       indicatorColor: Color(0xffFB1818),
                       labelColor: Color(0xffFB1818),
+                      labelStyle: TextStyle(
+                        fontSize: 11
+                            , fontWeight: FontWeight.w500
+                      ),
                       unselectedLabelColor: Colors.grey[800],
                       tabs: [
                         Tab(
