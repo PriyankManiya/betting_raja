@@ -2,6 +2,7 @@ import 'package:betting_raja/Screens/SplasScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  
   runApp(MyApp());
 }
 
